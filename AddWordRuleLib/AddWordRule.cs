@@ -26,10 +26,16 @@ namespace AddWordRuleLib
             if (Type == (int)TypeEnum.Suffix)
             {
                 int i = result.LastIndexOf('.');
-                string name = result.Substring(0, i);
-                string extension = result.Substring(i, original.Length - name.Length);
-
-                result = $"{name}{Word}{extension}";
+                if(i > 0)
+                {
+                    string name = result.Substring(0, i);
+                    string extension = result.Substring(i, original.Length - name.Length);
+                    result = $"{name}{Word}{extension}";
+                }
+                else
+                {
+                    result = $"{result}{Word}";
+                }
             }
             else
             {
