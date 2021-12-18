@@ -15,10 +15,6 @@ namespace TrimRuleLib
         {
             get => "Trim";
         }
-        //public string Word
-        //{
-        //    get; set;
-        //}
 
         public string Rename(string original)
         {
@@ -44,13 +40,12 @@ namespace TrimRuleLib
             };
 
             var userControl = TrimDialog.Content as UserControl1;
-            //userControl.Handler += (string data) => {  };
 
             TrimDialog.ShowDialog();
 
             if (TrimDialog.DialogResult == true)
             {
-                return $"{MagicWord}ming done!";
+                return $"{MagicWord}";
             }
 
             return "";
@@ -59,6 +54,11 @@ namespace TrimRuleLib
         public IRenameRule Clone()
         {
             return new TrimRule() { };
+        }
+
+        public override string ToString()
+        {
+            return $"{MagicWord}";
         }
     }
 
@@ -71,7 +71,7 @@ namespace TrimRuleLib
 
         public IRenameRule Parse(string line)
         {
-            var tokens = line.Split('\"');
+            //var tokens = line.Split('\"');
 
             IRenameRule rule = new TrimRule() { };
             return rule;

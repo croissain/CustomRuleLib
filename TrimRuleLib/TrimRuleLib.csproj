@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <Reference Include="RenameRuleLib">
-      <HintPath>..\..\..\BatchRename1112\BatchRename\RenameRuleLib\bin\Debug\net5.0-windows\RenameRuleLib.dll</HintPath>
+      <HintPath>..\..\BatchRename\RenameRuleLib\bin\Debug\net5.0-windows\RenameRuleLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

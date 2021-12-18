@@ -17,13 +17,12 @@ namespace TrimRuleLib
     {
         public UserControl1()
         {
-            ////InitializeComponent();
+            InitializeComponent();
             //this.LoadViewFromUri("/TrimRuleLib;component/TrimConfigDialog.xaml");
-
         }
 
-        public delegate void MyDelegateType(string ch);
-        public event MyDelegateType Handler;
+        //public delegate void MyDelegateType(string ch);
+        //public event MyDelegateType Handler;
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
@@ -35,13 +34,13 @@ namespace TrimRuleLib
             Window.GetWindow(this).DialogResult = true;
         }
 
-        private void CharTextbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (Handler != null)
-            {
-                Handler("");
-            }
-        }
+        //private void CharTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (Handler != null)
+        //    {
+        //        Handler("");
+        //    }
+        //}
     }
 }
 
