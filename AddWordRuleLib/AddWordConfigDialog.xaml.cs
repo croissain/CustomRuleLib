@@ -48,28 +48,23 @@ namespace AddWordRuleLib
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            string txbWord = wordTextbox.Text;
+            int type = TypeCombobox.SelectedIndex;
+            if (Handler != null)
+            {
+                Handler(txbWord, type);
+            }
             Window.GetWindow(this).DialogResult = true;
         }
 
         private void TypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string txbWord = wordTextbox.Text;
-            int type = TypeCombobox.SelectedIndex;
-            if (Handler != null)
-            {
-                Handler(txbWord, type);
-            }
+            
         }
 
         private void wordTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string txbWord = wordTextbox.Text;
-            int type = TypeCombobox.SelectedIndex;
-            if (Handler != null)
-            {
-                Handler(txbWord, type);
-            }
         }
     }
 }

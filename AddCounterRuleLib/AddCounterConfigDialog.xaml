@@ -5,9 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:AddCounterRuleLib"
              mc:Ignorable="d"
-             d:DesignHeight="250"
+             d:DesignHeight="300"
              d:DesignWidth="300"
              Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="validationTemplate">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="{Binding ErrorContent}" Foreground="Red"  Margin="0 0 0 3"/>
+                <Border BorderBrush="Red" BorderThickness="1" Width="135">
+                    <AdornedElementPlaceholder/>
+                </Border>
+            </StackPanel>
+        </ControlTemplate>
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                    <Setter Property="Margin" Value="0 20 0 0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Canvas>
         <Label Content="Add Counter To The End"
                Foreground="Black"
@@ -25,47 +44,76 @@
         <TextBox Name="startTextbox"
                  TextChanged="startTextbox_TextChanged"
                  Height="38"
-                 Width="130"
-                 Canvas.Left="161"
-                 Canvas.Top="59"
-                 RenderTransformOrigin="0.145,0.807" />
+                 Width="135"
+                 Canvas.Left="155"
+                 Canvas.Top="60"
+                 Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                 Style="{StaticResource textBoxInError}">
+            <TextBox.Text>
+                <Binding Path="Start" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IsNumberRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Label Content="_Step: "
                Foreground="Black"
                FontSize="14"
                Canvas.Left="1"
-               Canvas.Top="109"
+               Canvas.Top="120"
                Target="{Binding ElementName=stepTextbox}" />
         <TextBox Name="stepTextbox"
                  TextChanged="stepTextbox_TextChanged"
                  Height="38"
-                 Width="130"
-                 Canvas.Left="161"
-                 Canvas.Top="107" />
+                 Width="135"
+                 Canvas.Left="155"
+                 Canvas.Top="120"
+                 Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                 Style="{StaticResource textBoxInError}">
+            <TextBox.Text>
+                <Binding Path="Step" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IsNumberRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Label Content="_Number Of Digits: "
                Foreground="Black"
                FontSize="14"
                Canvas.Left="1"
-               Canvas.Top="155"
+               Canvas.Top="185"
                Target="{Binding ElementName=digitsTextbox}"
                RenderTransformOrigin="0.598,0.894" />
         <TextBox Name="digitsTextbox"
                  TextChanged="digitsTextbox_TextChanged"
                  Height="38"
-                 Width="130"
-                 Canvas.Left="161"
-                 Canvas.Top="155" />
+                 Width="135"
+                 Canvas.Left="155"
+                 Canvas.Top="180"
+                 Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                 Style="{StaticResource textBoxInError}">
+            <TextBox.Text>
+                <Binding Path="Digits" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IsNumberRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Button Name="okButton"
                 Width="80"
                 Height="25"
                 Content="OK"
                 Click="OkButton_Click"
-                Canvas.Left="60"
-                Canvas.Top="215" />
+                Canvas.Left="49"
+                Canvas.Top="260" />
         <Button Content="Cancel"
                 Width="80"
                 Height="25"
                 IsCancel="True"
-                Canvas.Left="161"
-                Canvas.Top="215" />
+                Canvas.Left="167"
+                Canvas.Top="260" />
     </Canvas>
 </UserControl>

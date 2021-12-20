@@ -31,38 +31,49 @@ namespace AddCounterRuleLib
         {
             string result = original;
 
-            int numberOfDigit = int.Parse(NumberOfDigits);
-            int lastDot = result.LastIndexOf('.');
-            if (lastDot != -1)
+            if(Start != "" && Step != "" && NumberOfDigits != "")
             {
-                string filename = result.Substring(0, lastDot);
-                string extension = result.Substring(lastDot, original.Length - filename.Length);
+                try
+                {
+                    int numberOfDigit = int.Parse(NumberOfDigits);
+                    int lastDot = result.LastIndexOf('.');
+                    if (lastDot != -1)
+                    {
+                        string filename = result.Substring(0, lastDot);
+                        string extension = result.Substring(lastDot, original.Length - filename.Length);
 
-                int temp = numberOfDigit - (int.Parse(Start) + index * int.Parse(Step)).ToString().Length;
-                if (temp < 0)
-                    return original;
-                while (temp > 0)
-                {
-                    filename += "0";
-                    temp--;
+                        int temp = numberOfDigit - (int.Parse(Start) + index * int.Parse(Step)).ToString().Length;
+                        if (temp < 0)
+                            return original;
+                        while (temp > 0)
+                        {
+                            filename += "0";
+                            temp--;
+                        }
+                        int cnter = int.Parse(Start) + index * int.Parse(Step);
+                        result = $"{filename}{cnter}{extension}";
+                    }
+                    else
+                    {
+                        int temp = numberOfDigit - (index * int.Parse(Step)).ToString().Length;
+                        if (temp < 0)
+                        {
+                            return original;
+                        }
+                        while (temp > 0)
+                        {
+                            result += "0";
+                            temp--;
+                        }
+                        int cnter = int.Parse(Start) + index * int.Parse(Step);
+                        result = $"{result}{cnter}";
+                    }
                 }
-                int cnter = int.Parse(Start) + index * int.Parse(Step);
-                result = $"{filename}{cnter}{extension}";
-            }
-            else
-            {
-                int temp = numberOfDigit - (index * int.Parse(Step)).ToString().Length;
-                if (temp < 0)
+                catch(Exception ex)
                 {
-                    return original;
+                    MessageBox.Show("Value in add couter rule not true! Please Check again!", "Add counter error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                while (temp > 0)
-                {
-                    result += "0";
-                    temp--;
-                }
-                int cnter = int.Parse(Start) + index * int.Parse(Step);
-                result = $"{result}{cnter}";
+
             }
 
             return result;
@@ -75,8 +86,8 @@ namespace AddCounterRuleLib
             {
                 Title = "Add Counter Config Dialog",
                 Content = new UserControl1(myrule.Start, myrule.Step, myrule.NumberOfDigits),
-                Width = 300,
-                Height = 330
+                Width = 320,
+                Height = 350
             };
 
             var userControl = addCounterDialog.Content as UserControl1;
