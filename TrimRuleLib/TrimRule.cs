@@ -16,7 +16,7 @@ namespace TrimRuleLib
             get => "Trim";
         }
 
-        public string Rename(string original)
+        public string Rename(string original, int index)
         {
             string result = original;
             //char[] firstChar = result.ToCharArray(0, 1);
@@ -73,8 +73,6 @@ namespace TrimRuleLib
         //Hàm parse dùng để parse một dòng thành một rule
         public IRenameRule Parse(string line)
         {
-            //var tokens = line.Split('\"');
-
             IRenameRule rule = new TrimRule() { };
             return rule;
         }

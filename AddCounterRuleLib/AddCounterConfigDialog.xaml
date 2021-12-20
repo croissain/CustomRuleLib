@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="AddCounterRuleLib.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AddCounterRuleLib"
+             mc:Ignorable="d"
+             d:DesignHeight="250"
+             d:DesignWidth="300"
+             Loaded="UserControl_Loaded">
+    <Canvas>
+        <Label Content="Add Counter To The End"
+               Foreground="Black"
+               Canvas.Top="10"
+               FontSize="20"
+               Width="300"
+               HorizontalContentAlignment="Center" />
+        <Label Content="_Start Value: "
+               Foreground="Black"
+               FontSize="14"
+               Width="133"
+               Canvas.Left="1"
+               Canvas.Top="60"
+               Target="{Binding ElementName=startTextbox}" />
+        <TextBox Name="startTextbox"
+                 TextChanged="startTextbox_TextChanged"
+                 Height="38"
+                 Width="130"
+                 Canvas.Left="161"
+                 Canvas.Top="59"
+                 RenderTransformOrigin="0.145,0.807" />
+        <Label Content="_Step: "
+               Foreground="Black"
+               FontSize="14"
+               Canvas.Left="1"
+               Canvas.Top="109"
+               Target="{Binding ElementName=stepTextbox}" />
+        <TextBox Name="stepTextbox"
+                 TextChanged="stepTextbox_TextChanged"
+                 Height="38"
+                 Width="130"
+                 Canvas.Left="161"
+                 Canvas.Top="107" />
+        <Label Content="_Number Of Digits: "
+               Foreground="Black"
+               FontSize="14"
+               Canvas.Left="1"
+               Canvas.Top="155"
+               Target="{Binding ElementName=digitsTextbox}"
+               RenderTransformOrigin="0.598,0.894" />
+        <TextBox Name="digitsTextbox"
+                 TextChanged="digitsTextbox_TextChanged"
+                 Height="38"
+                 Width="130"
+                 Canvas.Left="161"
+                 Canvas.Top="155" />
+        <Button Name="okButton"
+                Width="80"
+                Height="25"
+                Content="OK"
+                Click="OkButton_Click"
+                Canvas.Left="60"
+                Canvas.Top="215" />
+        <Button Content="Cancel"
+                Width="80"
+                Height="25"
+                IsCancel="True"
+                Canvas.Left="161"
+                Canvas.Top="215" />
+    </Canvas>
+</UserControl>

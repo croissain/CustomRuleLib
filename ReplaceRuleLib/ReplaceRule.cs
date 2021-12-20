@@ -16,7 +16,7 @@ namespace ReplaceRuleLib
         public string Replacer { get; set; }
         public int Type { get; set; }
 
-        public string Rename(string original)
+        public string Rename(string original, int index)
         {
             string result = original;
             if (Needle != null && Needle != "" && Replacer != null)
