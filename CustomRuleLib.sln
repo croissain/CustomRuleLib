@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewCaseRuleLib", "NewCaseRu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrimRuleLib", "TrimRuleLib\TrimRuleLib.csproj", "{EEEA0A7A-C65F-415C-94EE-77BAEC5E5EFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CounterRuleLib1", "CounterRuleLib\CounterRuleLib1.csproj", "{B1E6AABF-E16A-4E59-8081-D528A1F6A68F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddCounterRuleLib", "AddCounterRuleLib\AddCounterRuleLib.csproj", "{DC0F548E-05A5-43DA-A40D-B1C3ED1CC90B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddCounterRuleLib", "AddCounterRuleLib\AddCounterRuleLib.csproj", "{DC0F548E-05A5-43DA-A40D-B1C3ED1CC90B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{EEEA0A7A-C65F-415C-94EE-77BAEC5E5EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEA0A7A-C65F-415C-94EE-77BAEC5E5EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEEA0A7A-C65F-415C-94EE-77BAEC5E5EFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1E6AABF-E16A-4E59-8081-D528A1F6A68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1E6AABF-E16A-4E59-8081-D528A1F6A68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1E6AABF-E16A-4E59-8081-D528A1F6A68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1E6AABF-E16A-4E59-8081-D528A1F6A68F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC0F548E-05A5-43DA-A40D-B1C3ED1CC90B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC0F548E-05A5-43DA-A40D-B1C3ED1CC90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC0F548E-05A5-43DA-A40D-B1C3ED1CC90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
