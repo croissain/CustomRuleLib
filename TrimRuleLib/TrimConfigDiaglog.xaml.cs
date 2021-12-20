@@ -33,13 +33,5 @@ namespace TrimRuleLib
         {
             Window.GetWindow(this).DialogResult = true;
         }
-
-        //private void CharTextbox_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    if (Handler != null)
-        //    {
-        //        Handler("");
-        //    }
-        //}
     }
 }

@@ -42,40 +42,29 @@ namespace ReplaceRuleLib
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            string textFrom = replaceFromTextbox.Text;
+            string textTo = replaceToTextbox.Text;
+            int type = TypeCombobox.SelectedIndex;
+            if (Handler != null)
+            {
+                Handler(textFrom, textTo, type);
+            }
             Window.GetWindow(this).DialogResult = true;
         }
 
         private void TypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string textFrom = replaceFromTextbox.Text;
-            string textTo = replaceToTextbox.Text;
-            int type = TypeCombobox.SelectedIndex;
-            if (Handler != null)
-            {
-                Handler(textFrom, textTo, type);
-            }
+            
         }
 
         private void replaceFromTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string textFrom = replaceFromTextbox.Text;
-            string textTo = replaceToTextbox.Text;
-            int type = TypeCombobox.SelectedIndex;
-            if (Handler != null)
-            {
-                Handler(textFrom, textTo, type);
-            }
+            
         }
 
         private void replaceToTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string textFrom = replaceFromTextbox.Text;
-            string textTo = replaceToTextbox.Text;
-            int type = TypeCombobox.SelectedIndex;
-            if (Handler != null)
-            {
-                Handler(textFrom, textTo, type);
-            }
+            
         }
     }
 }

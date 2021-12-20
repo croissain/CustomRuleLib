@@ -36,11 +36,6 @@ namespace NewCaseRuleLib
         public delegate void MyDelegateType(int data);
         public event MyDelegateType Handler;
 
-        private void OkButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window.GetWindow(this).DialogResult = true;
-        }
-
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _options = new Dictionary<int, string>();
@@ -53,7 +48,7 @@ namespace NewCaseRuleLib
             DataContext = this;
         }
 
-        private void TypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OkButton_Click(object sender, RoutedEventArgs e)
         {
             int data = TypeCombobox.SelectedIndex;
 
@@ -61,6 +56,13 @@ namespace NewCaseRuleLib
             {
                 Handler(data);
             }
+            Window.GetWindow(this).DialogResult = true;
+        }
+
+
+        private void TypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
