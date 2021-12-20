@@ -43,7 +43,7 @@ namespace NewCaseRuleLib
             return "";
         }
 
-        public string Rename(string original)
+        public string Rename(string original, int index)
         {
             string result = original;
             int i = result.LastIndexOf('.');

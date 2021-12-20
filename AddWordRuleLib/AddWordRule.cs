@@ -20,7 +20,7 @@ namespace AddWordRuleLib
         public string Word { get; set; }
         public int Type { get; set; }
 
-        public string Rename(string original)
+        public string Rename(string original, int index)
         {
             string result = original;
             if (Type == (int)TypeEnum.Suffix)
