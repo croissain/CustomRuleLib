@@ -45,6 +45,7 @@ namespace AddWordRuleLib
             return result;
         }
 
+        //Hiển thị màn hình config để nhận dữ liệu từ các input phục vụ cho việc đổi tên
         public string Config(IRenameRule rule)
         {
             var myrule = rule as AddWordRule;
@@ -83,6 +84,7 @@ namespace AddWordRuleLib
     {
         public string MagicWord { get => "AddWord"; }
 
+        //Hàm parse dùng để parse một dòng thành một rule
         public IRenameRule Parse(string line)
         {
             var tokens = line.Split('\"');

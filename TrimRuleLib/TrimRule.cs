@@ -1,4 +1,4 @@
-using RenameRuleLib;
+﻿using RenameRuleLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +28,7 @@ namespace TrimRuleLib
             return result;
         }
 
+        //Hiển thị màn hình config để nhận dữ liệu từ các input phục vụ cho việc đổi tên
         public string Config(IRenameRule rule)
         {
             var myrule = rule as TrimRule;
@@ -69,6 +70,7 @@ namespace TrimRuleLib
             get => "Trim";
         }
 
+        //Hàm parse dùng để parse một dòng thành một rule
         public IRenameRule Parse(string line)
         {
             //var tokens = line.Split('\"');
