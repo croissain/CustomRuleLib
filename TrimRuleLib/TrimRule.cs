@@ -46,7 +46,7 @@ namespace TrimRuleLib
 
             if (TrimDialog.DialogResult == true)
             {
-                return $"{MagicWord}";
+                return $"{MagicWord} ";
             }
 
             return "";
@@ -59,7 +59,7 @@ namespace TrimRuleLib
 
         public override string ToString()
         {
-            return $"{MagicWord}";
+            return $"{MagicWord} ";
         }
     }
 
